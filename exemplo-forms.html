@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo formulário</title>
+</head>
+<body>
+    <header></header>
+    <main>
+        <h3>Faça seu cadastro</h3>
+        <!-- Formulário -->
+        <form id="registroForm" method="post">
+            <!-- Inserção de nome -->
+            <label for="nome">Nome completo:</label>
+            <input type="text" id="nome" name="nome" required placeholder="Digite seu nome...">
+            <br><br>
+            <!-- Inserção e-mail -->
+            <label for="email">Informe seu e-mail:</label>
+            <input type="email" id="email" name="email" required placeholder="Digite seu email...">
+            <br><br>
+            <!-- Inserção senha -->
+            <label for="senha">Digite sua senha:</label>
+            <input type="password" id="senha" name="senha" required minlength="8" maxlength="12" placeholder="Digite sua senha...">
+            <br><br>
+            <textarea id="mensagem" name="mensagem" rows="4" cols="30"></textarea>
+            <input type="number" name="numeros" id="numeros " step="1">
+            <br>
+            <label for="evento">Escolha seu evento:</label>
+            <select name="evento" id="evento">
+                <option value="Show de Rock">Show de Rock</option>
+                <option value="Show de Modão">Show de Modão</option>
+                <option value="Jogos Universitários">Jogos Universitários</option>
+            </select>
+            <br>
+            <label>
+                <input type="checkbox" id="termos" name="termos" required>
+                Concordo com os termos de uso
+            </label>
+            <br>
+            <p>Forma de pagamento:</p>
+            <label><input type="radio" value="pix" name="pagamento">Pix</label>
+            <label><input type="radio" value="cartao" name="pagamento">Cartão</label>
+            <br>
+            <input placeholder="Informe seu CPF" type="text" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" title="Formato esperado 000.000.000-00">
+            <input type="submit" value="Cadastrar">
+        </form>
+    </main>
+    <footer></footer>
+
+    <script>
+        // Capturando um elemento HTML pelo ID
+        //Escutando o event de submit deste elemento HTML
+        document.getElementById('registroForm').addEventListener('submit',function(event){  
+            // Impendindo o comportamento padrão de envio do Form
+            event.preventDefault()
+            
+            //Pegando o valor preenchido no input nome
+            const nome = document.getElementById('nome').value;
+            const email = document.getElementById('email').value;
+            const senha = document.getElementById('senha').value;
+            
+            // Criando um alerta na tela
+            alert("Olá, "+nome+" , Formulário enviado no email - "+email)
+            alert("Sua senha é "+senha)
+        })
+    </script>
+
+</body>
+</html>
