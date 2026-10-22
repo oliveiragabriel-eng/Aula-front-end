@@ -9,6 +9,13 @@ body {
     line-height: 1.6; 
     background-color: #f4f4f9;
     color: #222;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main{
+    flex: 1;
 }
 
 h1 {
@@ -35,7 +42,7 @@ a:hover {
 }
 
 nav a {
-    color: #2a6bf2;
+    color: #ffffff;
     font-weight: bold;
     text-decoration: none;
 }
@@ -96,10 +103,17 @@ header {
     color: white;
     padding: 20px;
     text-align: center;
+    display: flex; /* Ativando flexbox*/
+    justify-content: space-between; /* Logo de um lado, menu do outro*/
+    flex-wrap: wrap; /* Quebra de linha se necessário em algum item*/
+    align-items: center; /* Ambos centralizados verticalmente*/
 }
 
 header .logo {
     margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }
 
 header .logo img {
@@ -116,3 +130,19 @@ footer {
     padding: 20px;
 }
 
+
+
+.eventos-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.evento-item{
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: #222;
+    /* Definir o quanto o elemento cresce, encolhe, e seu tamanho inicial  */
+    flex: 1 1 250px; /*felx-grow:1, flex-shrink:1, flex-basis:1*/
+}
